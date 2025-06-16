@@ -31,3 +31,44 @@ wasm-bindgen-futures = "0.4.50"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 reqwest = { version = "0.12.20", features = ["json"] }
+```
+
+## 🧰 Backend (Actix Web + SQLx + MySQL)
+The backend is built with Actix Web, a powerful actor-based web framework designed for performance and scalability.
+
+- **RESTful APIs** for CRUD operations
+
+- **SQLx** for compile-time checked, async SQL queries (MySQL)
+
+- **CORS support** via actix-cors
+
+- **Environment configuration** using .env with dotenv
+
+- Powered by **Tokio** runtime for non-blocking concurrency
+
+**Backend dependencies:**
+
+```toml
+actix-web = "4"
+actix-cors = "0.7.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sqlx = { version = "0.8.6", features = ["mysql", "runtime-tokio-native-tls"] }
+dotenv = "0.15"
+tokio = { version = "1", features = ["full"] }
+```
+
+## 🔗 Communication
+The frontend and backend communicate via HTTP/JSON APIs. Using reqwest in the frontend and actix-web in the backend, data flows efficiently and safely, with Rust’s powerful type system ensuring correctness.
+
+## ✅ Key Benefits
+🦀 100% Rust across frontend and backend — no JavaScript required
+
+🚀 High performance through async programming and WASM
+
+🔐 Type-safe, robust data handling with serde
+
+🧪 Ready for testing, deployment, and production
+
+📦 Easy to extend with authentication, image uploads, or admin panels
+
